@@ -1,0 +1,12 @@
+{
+  "name": "dz1_solopina",
+  "devDependencies": {
+    "browser-sync": "^2.8.0",
+    "gulp": "^3.9.0"
+  },
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-stylus": "^2.0.5",
+    "gulp.spritesmith": "^3.8.2"
+  }
+}
