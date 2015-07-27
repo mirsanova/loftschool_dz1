@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru-RU" g_init="6852">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- CEO -->
+	<title>Главная страница</title>
+	<meta name="desciption" content="Сайт-портфолио Солопиной Ксении">
+	<meta name="keywords" content="портфолио, Солопина, FRONTEND разработчик">
+	<meta name="author" content="Солопина Ксения">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="bower/normalize.css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="fonts/fira.css">
+    <link rel="stylesheet" type="text/css" href="fonts/proximanovacond-semibold.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/login-form.css">
+	<!-- modernizer -->
+	<script type="bower/modernizer/modernizr.js"></script>
+</head>
+	<body>
+		<!--[if lt IE 7]>
+		<p class="browsehappy">Вы испоьзуете устаревший браузер. Пожалуйста <a href="http://browsehappy.com">обновите</a>его.</p>
+		<![endif]-->
+		<div class="wrapper">
+			<div class="container lg-form-content">
+				<div class="clearfix">
+					<div class="content-flgform-header">
+						<h2>Авторизируйтесь</h2>
+					</div>
+					<div class="lgform">
+						<form class="login-form" action="/echo" method="post">
+							<input type="text" name="login" placeholder="Введите логин" required>
+							<input type="password" name="password" placeholder="Введите пароль" required>
+							<button type="submit" class="btn">Войти</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class="page-footer">
+			<div class="container">
+				<div class="copyright">©&nbsp;2015. Это мой сайт, пожалуйста, не копируйте и не воруйте его</div>
+			</div>
+		</footer>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
