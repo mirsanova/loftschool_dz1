@@ -1,0 +1,92 @@
+.content-works .aboutbox{
+    float:right;
+    width: 650px;
+    min-height: 840px;
+}
+
+.site-wrap{
+    padding: 0 16px;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 45px;
+    text-align: center;
+    max-width: 180px;
+}
+.site-wrap p{
+    margin:0;
+    width: 100%;
+}
+.site-wrap a{
+    text-decoration: none;
+}
+.site-wrap .title-site{
+    font-family: 'Fira Sans';
+    font-style: italic;
+    font-size: 13px;
+    line-height: auto;
+    color:#5eb3c8;
+}
+
+.site-img{
+    width: 180px;
+    height: 125px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 2px solid #3ba8c0;
+    position: relative;
+}
+.overlay{
+    position: absolute;
+    background-color: rgba(1,108,164,.75);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 0.3s linear;
+}
+.overlay-title{
+    display: inline-block;
+    font-family: 'fira_sansbook';
+    font-size: 12px;
+    color: #eff3f7;
+    padding: 0px 4px;
+    border: 2px solid #eff3f7;
+    opacity: 0;
+    border-radius: 6px;
+    transition: opacity 0.3s linear;
+    word-wrap: break-word;
+    max-width: 150px;
+}
+.site-img:hover .overlay-title{
+    opacity: 1;
+}
+.site-img:hover .overlay{
+    opacity: 1;
+}
+.overlay:before {
+    display: inline-block;
+    content: '';
+    height: 100%;
+    vertical-align: middle;
+}
+.site-wrap-add{
+    display: block;
+    width: 144px;
+    border: 2px dashed #3ba8c0;
+    border-radius: 6px;
+    padding:32px 16px;
+    background-color:#edf8fc;
+}
+.site-wrap-add:before {
+    content: url('../img/icon-add-site.png');
+    width: 32px;
+    height: 32px;
+    vertical-align: top;
+}
+.site-add{
+    font-family: 'fira_sanslight';
+    font-size: 13px;
+    color: #3ba8c0;
+}
