@@ -17,6 +17,7 @@
 	<link rel="stylesheet" type="text/css" href="fonts/fira.css">
     <link rel="stylesheet" type="text/css" href="fonts/proximanovacond-semibold.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/feedback-form.css">
 	<link rel="stylesheet" type="text/css" href="css/login-form.css">
 	<!-- modernizer -->
 	<script type="bower/modernizer/modernizr.js"></script>
@@ -25,16 +26,22 @@
 		<!--[if lt IE 7]>
 		<p class="browsehappy">Вы испоьзуете устаревший браузер. Пожалуйста <a href="http://browsehappy.com">обновите</a>его.</p>
 		<![endif]-->
-		<div class="wrapper">
-			<div class="container lg-form-content">
-				<div class="clearfix">
-					<div class="content-flgform-header">
+		<div class="wrapper helper">
+			<div class="lg-form-conteiner">
+				<div class=" lg-form-content">
+					<div class="content-form-header">
 						<h2>Авторизируйтесь</h2>
 					</div>
 					<div class="lgform">
 						<form class="login-form" action="/echo" method="post">
-							<input type="text" name="login" placeholder="Введите логин" required>
-							<input type="password" name="password" placeholder="Введите пароль" required>
+							<span class="contact">Логин</span>
+							<label for="login">
+								<input id="login" type="text" name="login" placeholder="Введите логин" required>
+							</label>
+							<span class="contact">Пароль</span>
+							<label for="password">
+								<input id="password" type="password" name="password" placeholder="Введите пароль" required>
+							</label>
 							<button type="submit" class="btn">Войти</button>
 						</form>
 					</div>

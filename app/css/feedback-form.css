@@ -5,7 +5,7 @@ width: 650px;
 border-radius: 6px;
 margin-bottom: 40px;
 }
-.content-fbform-header{
+.content-form-header{
     display: inline-block;
     vertical-align: middle;
     text-align: center;
@@ -16,7 +16,7 @@ margin-bottom: 40px;
     padding: 43px 0;
     margin-bottom: 35px;
 }
-.content-fbform-header h2{
+.content-form-header h2{
     font-family:'fira_sansbook';
     font-weight: normal;
     font-size: 27px;
@@ -29,7 +29,7 @@ margin-bottom: 40px;
     max-width: 403px;
 
 }
-.fbform .contact{
+.contact{
     display: block;
     font-size: 19px;
     color: #959aa8;
@@ -47,11 +47,11 @@ margin-bottom: 40px;
     margin-right: 4%;
 }
 
-.fbform input{
+input{
     line-height: normal;
 
 }
-.fbform input, textarea,.placeholder{
+input, textarea,.placeholder{
     font-family: 'fira_sanslight';
     border: 1px solid #48cbe8;
     background-color: #fbfcfd;
@@ -82,10 +82,10 @@ margin-bottom: 40px;
 .fbform textarea::-webkit-input-placeholder {
     color: #48cbe8;
  }
-.fbform input:-moz-placeholder {
+input:-moz-placeholder {
     color: #48cbe8;
 }
-.fbform input::-webkit-input-placeholder {
+input::-webkit-input-placeholder {
     color: #48cbe8;
 }
 .fbform .column{
@@ -93,7 +93,7 @@ margin-bottom: 40px;
 }
 .fbform .contact-item-code{
     display: inline-block;
-    vertical-align: top; /*Не смогла выровнять по центру, пришлось использовать маргин*/
+    vertical-align: top;
     margin-top: 18px;
 }
 .btn{
