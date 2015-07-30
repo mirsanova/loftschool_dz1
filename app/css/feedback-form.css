@@ -5,34 +5,10 @@ width: 650px;
 border-radius: 6px;
 margin-bottom: 40px;
 }
-.content-form-header{
-    display: inline-block;
-    vertical-align: middle;
-    text-align: center;
-    width: 100%;
-    background-color: #48cbe8;
-    border-bottom: 17px solid #67dffa;
-    border-radius: 6px 6px 0 0;
-    padding: 43px 0;
-    margin-bottom: 35px;
-}
-.content-form-header h2{
-    font-family:'fira_sansbook';
-    font-weight: normal;
-    font-size: 27px;
-    line-height: 30px;
-    color: #ffffff;
-    margin:0;
-}
 .content-feedback-form .fbform{
     margin: 0 auto;
     max-width: 403px;
 
-}
-.contact{
-    display: block;
-    font-size: 19px;
-    color: #959aa8;
 }
 .fbform .contact-item{
     display: inline-block;
@@ -47,22 +23,8 @@ margin-bottom: 40px;
     margin-right: 4%;
 }
 
-input{
-    line-height: normal;
-
-}
-input, textarea,.placeholder{
-    font-family: 'fira_sanslight';
-    border: 1px solid #48cbe8;
-    background-color: #fbfcfd;
-    border-radius: 3px;
+.fbform input, textarea,.placeholder{
     font-size: 13px;
-    color: #48cbe8;
-    padding: 10px;
-    outline: none;
-    width: 100%;
-    box-sizing: border-box;
-
 }
 .fbform .image-code{
     background-color: #fbfcfd;
@@ -72,44 +34,17 @@ input, textarea,.placeholder{
     width: 161px;
     max-height: 46px;
     overflow: hidden;
-    display: inline-block;
-    margin-right: 4%;
+    float:left;
 }
 .fbform textarea:-moz-placeholder {
-    color: #48cbe8;
     font-size: 13px;
-}
-.fbform textarea::-webkit-input-placeholder {
-    color: #48cbe8;
- }
-input:-moz-placeholder {
-    color: #48cbe8;
-}
-input::-webkit-input-placeholder {
-    color: #48cbe8;
 }
 .fbform .column{
     width: 48%;
 }
 .fbform .contact-item-code{
-    display: inline-block;
-    vertical-align: top;
+    float: right;
     margin-top: 18px;
-}
-.btn{
-    margin-bottom: 199px;
-    padding: 1px 20px;
-    border-radius: 4px;
-    border: 0;
-    font-family:'fira_sansbook';
-    font-weight: normal;
-    font-size: 19px;
-    color: #ffffff;
-}
-.btn:active,
-.btn:focus{
-    outline: none;
-    border: 0;
 }
 .btn_sub{
     box-shadow: 0px 2px #3ba8c0;
@@ -123,7 +58,6 @@ input::-webkit-input-placeholder {
     box-shadow: 0px -2px #3ba8c0;
     border: 0;
 }
-
 .btn_res{
     box-shadow: 0px 2px #687b8f;
     background-color: #849db5;

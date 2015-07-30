@@ -19,6 +19,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/about-me.css">
     <link rel="stylesheet" type="text/css" href="css/my-works.css">
+    <link rel="stylesheet" type="text/css" href="css/popup.css">
 	<!-- modernizer -->
 	<script type="bower/modernizer/modernizr.js"></script>
 </head>
@@ -137,13 +138,53 @@
                                     <p>Информация о проекте 4 превью 2 строки... .</p>
                                 </div>
                                 <div class="site-wrap">
-                                    <a href="#" class="site-wrap-add">
+                                    <a href="#" id="add-new-item" class="site-wrap-add">
                                         <div class="site-add">Добавить проект</div>
                                     </a>
                                 </div>
                             </div>
 						</section>
-					</div>
+                    </div>
+                    <div id="add-project-popup" class="add-project-popup container-add-project">
+                        <div class="modal-wrapper">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close b-close"></button>
+                                <h3>Добавление проекта</h3>
+                            </div>
+                            <div class="modal-body">
+                                <form id="add-new-project" class="form-new-project" action="/echo" method="post">
+                                    <!-- <div class="server-mes error-mes"></div>
+                                    <div class="server-mes succes-mes"></div> -->
+                                    <div class="contact-item">
+                                        <span class="contact">Название проекта</span>
+                                        <label for="name-project">
+                                            <input id="name-project" name="name-project" placeholder="Введите название" type="text">
+                                        </label>
+                                    </div>
+                                    <div class="contact-item">
+                                        <span class="contact">Картинка проекта</span>
+                                        <label for="upload" class="upload">
+                                            <span class="upload-img">Загрузите изображение</span>
+                                            <input id="upload" name="upload" type="file" class="input">
+                                         </label>
+                                    </div>
+                                    <div class="contact-item">
+                                        <span class="contact">URL проекта</span>
+                                        <label for="url-project">
+                                            <input id="url-project" name="url-project" placeholder="Добавьте ссылку" type="text">
+                                        </label>
+                                    </div>
+                                    <div class="contact-item">
+                                        <span class="contact">Описание</span>
+                                        <label for="description-project">
+                                        <textarea id="description-project" name="description-project" placeholder="Пара слов о Вашем проекте" rows="6"></textarea>
+                                        </label>
+                                    </div>
+                                    <button type="submit" class="btn btn-add">Добавить</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
 				</div>
 			</div>
 		</div>
@@ -155,7 +196,9 @@
 				<div class="copyright">©&nbsp;2015. Это мой сайт, пожалуйста, не копируйте и не воруйте его</div>
 			</div>
 		</footer>
-    <script src="./js/jquery.js"></script>
+    <script src="bower/jquery/dist/jquery.min.js"></script>
+    <script src="bower/bpopup/jquery.bpopup.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/add-project.js"></script>
 </body>
 </html>
