@@ -20,7 +20,8 @@
 	<link rel="stylesheet" type="text/css" href="css/feedback-form.css">
 	<link rel="stylesheet" type="text/css" href="bower/qtip2/jquery.qtip.css">
 	<!-- modernizer -->
-	<script type="bower/modernizer/modernizr.js"></script>
+	<script src="bower/modernizer/modernizr.js"></script>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 	<body>
 		<!--[if lt IE 7]>
@@ -90,6 +91,8 @@
 						</div>
 						<div class="fbform clearfix">
 							<form action="" method="post" id="contact-me">
+								<div class="server-mes error-mes"></div>
+                                <div class="server-mes success-mes"></div>
 								<div class="contact-item column">
 									<span class="contact">Имя</span>
 									<label for="name">
@@ -108,7 +111,9 @@
 										<textarea name="comment" id="comment" placeholder="Кратко в чем суть" rows="8" qtip-content="ваш вопрос" qtip-position="left"></textarea>
 									</label>
 								</div>
-								<div class="contact-item">
+								<div class="g-recaptcha" id="g-recaptcha" style ="width: 200px; height:100px;"data-sitekey="6LeW2woTAAAAAMU9wpV49HWXbprs3eTDHKCkWEVQ"></div>
+								<!-- <div class="contact-item">
+									<div class="g-recaptcha" data-sitekey="6LeW2woTAAAAAMU9wpV49HWXbprs3eTDHKCkWEVQ"></div>
 									<span class="contact">Введите код, указанный на картинке</span>
 									<div class="image-code clearfix">
 										<img src="img/code-img.png">
@@ -118,7 +123,7 @@
 											<input id="captcha" name="captcha" placeholder="Введите код" type="text" qtip-content="вы не ввели код" qtip-position="right">
 										</label>
 									</div>
-								</div>
+								</div> -->
 								<button type="submit" class="btn btn_sub">Отправить</button>
 								<button type="reset" class="btn btn_res">Очистить</button>
 							</form>
@@ -135,7 +140,7 @@
 				<div class="copyright">©&nbsp;2015. Это мой сайт, пожалуйста, не копируйте и не воруйте его</div>
 			</div>
 		</footer>
-    <script src="bower/jquery/dist/jquery.min.js"></script>
+    <script src="./js/jquery.js"></script>
     <script src="bower/qtip2/jquery.qtip.js"></script>
     <script src="./js/validation.js"></script>
     <script src="./js/feedback-form.js"></script>

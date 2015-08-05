@@ -9,11 +9,10 @@ var myModule = (function () {
 // Прослушивает события
     var _setUpListners = function (){
 
-            $('#add-new-item').on('click', _showModal);
-            $('#add-new-project').on('submit', _addProject);
+        $('#add-new-item').on('click', _showModal);
+        $('#add-new-project').on('submit', _addProject);
 
-
-        };
+    };
 
 //Работает с модальным окном
     var _showModal = function (ev){
@@ -21,49 +20,42 @@ var myModule = (function () {
         ev.preventDefault();
         var divPopup = $('#add-project-popup');
             form = divPopup.find('.form-new-project');
+
         divPopup.bPopup({
             speed: 250,
             transition: 'slideDown',
             onClose: function () {
                 $(".qtip").remove();
                 form.find('.server-mes').text('').hide();
-                form.find('.error').removeClass('error');
-                form.find('.has-error').removeClass('has-error');
+                form.trigger("reset");
             }
-            });
-        };
-
-
-
-
-
+        });
+    };
 
 // Добавляет проект
-    var _addProject = function (e) {
+    var _addProject = function (ev) {
 
-                e.preventDefault();
+        ev.preventDefault();
 
+        var form = $(this),
+            url = 'add-project.php',
+            defObj = _ajaxForm(form, url);
 
-                var form = $(this),
-                        url = 'add-project.php',
-                        defObj = _ajaxForm(form, url);
+        if(defObj){
+            defObj.done(function(ans) {
 
+                var successBox = form.find('.success-mes'),
+                        errorBox = form.find('.error-mes');
 
-                    if(defObj){
-                        defObj.done(function(ans) {
-
-                            var successBox = form.find('.success-mes'),
-                                    errorBox = form.find('.error-mes');
-
-                            if(ans.status === 'OK'){
-                                errorBox.hide();
-                                successBox.text(ans.text).show();
-                            }else{
-                                successBox.hide();
-                                errorBox.text(ans.text).show();
-                            }
-                        });
-                    }
+                if(ans.status === 'OK'){
+                    errorBox.hide();
+                    successBox.text(ans.text).show();
+                }else{
+                    successBox.hide();
+                    errorBox.text(ans.text).show();
+                }
+            });
+        }
     };
 // Универсальная функция
 // 1. Собирает данные из формы
@@ -72,24 +64,22 @@ var myModule = (function () {
 //
     var _ajaxForm = function (form, url) {
 
-            if (!validation.validateForm(form)) return false;
+        if (!validation.validateForm(form)) return false;
 
-                data = form.serialize();
+            data = form.serialize();
 
-                var result = $.ajax({
-                        url: url,
-                        type: 'POST',
-                        dataType: 'json',
-                        data: data,
-                    }).fail( function(ans) {
-                console.log('Проблемы в PHP');
-                form.find('.error-mes').text('На сервере произошла ошибка').show();
-              });
+            var result = $.ajax({
+                    url: url,
+                    type: 'POST',
+                    dataType: 'json',
+                    data: data,
+                }).fail( function(ans) {
+            console.log('Проблемы в PHP');
+            form.find('.error-mes').text('На сервере произошла ошибка').show();
+          });
 
-                return result;
-            };
-
-
+            return result;
+        };
 
     return {
         init: init

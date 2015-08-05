@@ -384,6 +384,11 @@ input::-webkit-input-placeholder {
     border-color:  #f97e76;
     color: #f97e76;
 }
+.success-mes{
+    background-color: #b8e1ce;
+    border-color:  #49bb7b;
+    color: #49bb7b;
+}
 .myCustomClass .qtip-content{
     font-family: 'fira_sansbook';
     font-size: 13px;

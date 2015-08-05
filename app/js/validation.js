@@ -10,7 +10,6 @@ var validation = (function () {
     var _setUpListners = function (){
         $('form').on('keydown','.has-error', _removeError);
         $('form').on('reset', _clearForm);
-        // $('#upload').on('change', _changeInputFileCaption);
         $('#upload').on('change', _changeInputFileCaption);
 
         };
@@ -46,7 +45,7 @@ var  _clearForm = function (form){
                 at: 'left center',
                 adjust: {
                     method: 'shift none'
-                }
+            }
         };
     }
     el.qtip({
@@ -87,18 +86,20 @@ var  _clearForm = function (form){
             var name = str.substring(i, str.length);
 
             if ((name.length === 0) & (inputUpload.attr('name') === 'upload')) {
+
                 $('#upload-img').text('Загрузите изображение');
                 uploadImg.addClass('has-error') & divUploadImg.addClass('error');
                 _createQtip(inputUpload, pos);
                 valid =false;
+
             } else {
                 $('#upload-img').text(name);
                 uploadImg.removeClass('has-error') & divUploadImg.removeClass('error');
                 inputUpload.qtip('destroy');
                 valid =true;
             }
-            return valid;
-};
+    return valid;
+    };
 
 // Проверка url
     var _isValidURL = function (form){
@@ -115,7 +116,7 @@ var  _clearForm = function (form){
     }
     return valid;
 
-};
+    };
 // Проверка email
     var _isValidEmail = function (form){
     var valid,
@@ -130,13 +131,14 @@ var  _clearForm = function (form){
     }
     return valid;
 
-};
+    };
 //Валидация формы
 
     var validateForm = function(form) {
 
         var inputs = form.find('input, textarea').not('input[type="file"]'),
             inputURL = form.find('#url-project'),
+            inputCaptcha = form.find('#g-recaptcha'),
             url = inputURL.val(),
             inputEmail = form.find('#email'),
             email = inputEmail.val();
@@ -156,52 +158,55 @@ var  _clearForm = function (form){
                     pos= input.attr('qtip-position');
                     uploadImg = form.find('#upload-label');
                     divUploadImg = form.find('.contact-item');
+                    // console.log(input.attr('name'));
+                if (input.attr('name') != 'g-recaptcha-response') {
+                    if (val.length === 0) {
 
-
-                if (val.length === 0) {
-
-                    input.parent('label').addClass('error');
-                    input.addClass('has-error');
-                    _createQtip(input, pos);
-                    validForm = false;
-                }
-                else if (url !== 0 && input.attr('name') === 'url-project' ) {
-                    validUrl = _isValidURL(form);
-                    if (validUrl === false) {
-                        inputURL.attr("qtip-content", "некорректный url");
-                        inputURL.parent('label').addClass('error');
-                        inputURL.addClass('has-error');
+                        input.parent('label').addClass('error');
+                        input.addClass('has-error');
                         _createQtip(input, pos);
-                    }
-                }
-                else {
-                    if (email !== 0 && input.attr('name') === 'email' ){
-                        validEmail = _isValidEmail(form);
-                        if (validEmail === false) {
-                            inputEmail.attr("qtip-content", "некорректный email");
-                            inputEmail.parent('label').addClass('error');
-                            inputEmail.addClass('has-error');
-                            _createQtip(input, pos);
+                        validForm = false;
 
+                    }   else if (url !== 0 && input.attr('name') === 'url-project' ) {
+                            validUrl = _isValidURL(form);
+                            if (validUrl === false) {
+                                inputURL.attr("qtip-content", "некорректный url");
+                                inputURL.parent('label').addClass('error');
+                                inputURL.addClass('has-error');
+                                _createQtip(input, pos);
+                            }
+                        }
+
+                    else {
+                        if (email !== 0 && input.attr('name') === 'email' ){
+                            validEmail = _isValidEmail(form);
+
+                            if (validEmail === false) {
+
+                                inputEmail.attr("qtip-content", "некорректный email");
+                                inputEmail.parent('label').addClass('error');
+                                inputEmail.addClass('has-error');
+                                _createQtip(input, pos);
+                            }
                         }
                     }
                 }
             });
 
-            var upload = form.find('#upload');
+        var upload = form.find('#upload');
 
-            if ( upload.attr('name') != undefined ) {
-                validName = _changeInputFileCaption();
-            }
+        if ( upload.attr('name') != undefined ) {
 
-            return validForm && validName && validUrl;
+            validName = _changeInputFileCaption();
+        }
+
+        return validForm && validName && validUrl;
 
      };
 
     return {
         init: init,
         validateForm:  validateForm
-
     };
 
 })();

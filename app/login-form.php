@@ -3,10 +3,10 @@
         $data = array();
 
         if ($data['status'] = 'OK'){
-        $data['text'] = 'Ура! Проект успешно добавлен';
+        $data['text'] = '';
         }
         else{
-            $data['text'] = 'Ошибка! Невозможно добавить проект!';
+            $data['text'] = 'Ошибка! Невозможно зайти в личный кабинет!';
             }
 
     header("Content-Type: application/json");
