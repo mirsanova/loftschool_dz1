@@ -3,6 +3,10 @@
 	border-radius: 4px;
 	margin-bottom: 26px;
 }
+.aboutbox:first-child {
+	margin-bottom: 0px;
+	padding-bottom: 26px;
+}
 .aboutbox .aboutbox-header {
 	font-family: 'fira_sansbook';
 	font-size: 27px;

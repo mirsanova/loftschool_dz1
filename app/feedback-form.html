@@ -68,7 +68,7 @@
 									</div>
 								</li>
 								<li class="sprite contacts-item mail">
-									<a class="contacts-link" href="mailto:kseniya.solopina@gmail.com">
+									<a class="contacts-link  ellipsis fix" href="mailto:kseniya.solopina@gmail.com" title="kseniya.solopina@gmail.com">
 										<span class="contacts-text">kseniya.solopina@gmail.com</span>
 									</a>
 								</li>
@@ -85,12 +85,12 @@
 							</ul>
 						</address>
 					</aside>
-					<div class="content-feedback-form clearfix">
+					<div id="content-feedback-form" class="content-feedback-form clearfix">
 						<div class="content-form-header">
 							<h2>У вас интересный проект? Напишите мне</h2>
 						</div>
 						<div class="fbform clearfix">
-							<form action="" method="post" id="contact-me">
+							<form action="" method="post" id="contact-me" name="contact-form" class="contact-me">
 								<div class="server-mes error-mes"></div>
                                 <div class="server-mes success-mes"></div>
 								<div class="contact-item column">
@@ -111,7 +111,7 @@
 										<textarea name="comment" id="comment" placeholder="Кратко в чем суть" rows="8" qtip-content="ваш вопрос" qtip-position="left"></textarea>
 									</label>
 								</div>
-								<div class="g-recaptcha" id="g-recaptcha" style ="width: 200px; height:100px;"data-sitekey="6LeW2woTAAAAAMU9wpV49HWXbprs3eTDHKCkWEVQ"></div>
+								<div class="g-recaptcha" id="g-recaptcha" data-sitekey="6LeW2woTAAAAAMU9wpV49HWXbprs3eTDHKCkWEVQ"></div>
 								<!-- <div class="contact-item">
 									<div class="g-recaptcha" data-sitekey="6LeW2woTAAAAAMU9wpV49HWXbprs3eTDHKCkWEVQ"></div>
 									<span class="contact">Введите код, указанный на картинке</span>
@@ -141,6 +141,7 @@
 			</div>
 		</footer>
     <script src="./js/jquery.js"></script>
+    <script src='./js/placeholders.js'></script>
     <script src="bower/qtip2/jquery.qtip.js"></script>
     <script src="./js/validation.js"></script>
     <script src="./js/feedback-form.js"></script>

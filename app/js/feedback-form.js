@@ -29,7 +29,9 @@ var contactMe = (function () {
                         errorBox = form.find('.error-mes');
 
                 if(ans.status === 'OK'){
+
                     errorBox.hide();
+                    form.trigger("reset");
                     successBox.text(ans.text).show();
                 }else{
                     successBox.hide();
@@ -40,8 +42,9 @@ var contactMe = (function () {
     };
 
     var _ajaxForm = function(form, url){
+var valid = validation.validateForm(form);
 
-        if (!validation.validateForm(form)) return false;
+        if (!valid) return false;
 
             data = form.serialize();
 
@@ -49,10 +52,12 @@ var contactMe = (function () {
                     url: url,
                     type: 'POST',
                     dataType: 'json',
-                    data: data,
+                    data: data
                 }).fail( function(ans) {
-            console.log('Проблемы в PHP');
-            console.log(ans);
+            // console.log('Проблемы в PHP');
+            // console.log(ans);
+            //
+
             form.find('.error-mes').text('На сервере произошла ошибка').show();
             });
 

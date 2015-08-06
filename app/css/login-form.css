@@ -19,16 +19,19 @@
 .lg-form-content .content-form-header{
     padding: 25px 0;
     margin: 0;
+
 }
 .lg-form-content .content-form-header h2{
     font-size: 40px;
     line-height: 44px;
     margin: 0;
+
 }
 .login-form {
     padding: 26px 83px;
     background: #eff3f7;
     border-radius: 6px;
+
 }
 .login-form .contact{
     font-size: 36px;

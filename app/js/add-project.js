@@ -49,6 +49,7 @@ var myModule = (function () {
 
                 if(ans.status === 'OK'){
                     errorBox.hide();
+                    form.trigger("reset");
                     successBox.text(ans.text).show();
                 }else{
                     successBox.hide();
@@ -63,8 +64,9 @@ var myModule = (function () {
 // 3. Делает запрос на сервер и возвращает ответ с сервера
 //
     var _ajaxForm = function (form, url) {
+        var valid = validation.validateForm(form);
 
-        if (!validation.validateForm(form)) return false;
+        if (!valid) return false;
 
             data = form.serialize();
 
@@ -74,7 +76,7 @@ var myModule = (function () {
                     dataType: 'json',
                     data: data,
                 }).fail( function(ans) {
-            console.log('Проблемы в PHP');
+            // console.log('Проблемы в PHP');
             form.find('.error-mes').text('На сервере произошла ошибка').show();
           });
 

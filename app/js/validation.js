@@ -200,7 +200,7 @@ var  _clearForm = function (form){
             validName = _changeInputFileCaption();
         }
 
-        return validForm && validName && validUrl;
+        return validForm && validName && validUrl && validEmail;
 
      };
 

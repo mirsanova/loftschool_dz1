@@ -23,10 +23,11 @@ $response = $reCaptcha->verifyResponse(
     );
 }
 
+$data = array();
 
 if ($response != null && $response->success) {
 
-        $data = array();
+
 
         if ($data['status'] = 'OK'){
         $data['text'] = 'Ура! Ваше письмо отправлено!';
@@ -37,8 +38,8 @@ if ($response != null && $response->success) {
 
     header("Content-Type: application/json");
 
-} else {
-    $data['text'] = 'Курла! Вы робот!';
+} else if (empty($response)) {
+    $data['text'] = 'Вы робот!';
 }
 
     echo json_encode($data);

@@ -13,10 +13,14 @@ body {
 	min-width: 970px;
 	height: auto!important;
 }
-.wrapper:after {
+/*.wrapper:after {
 	content: "";
 	height: 80px;
 	display: block;
+}*/
+
+.main-content {
+  padding-bottom: 80px;
 }
 .page-footer {
 	min-width: 970px;
@@ -239,6 +243,18 @@ body {
 .contacts-link .contacts-text {
     word-wrap: break-word;
 }
+
+.ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.fix {
+    word-wrap: normal;
+}
+
+
 .contacts .contacts-item.mail:before {
     content: url('../img/icon-mail.png');
     background-repeat: no-repeat;

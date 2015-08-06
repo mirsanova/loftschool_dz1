@@ -21,6 +21,9 @@
     <link rel="stylesheet" type="text/css" href="css/my-works.css">
     <link rel="stylesheet" type="text/css" href="css/popup.css">
     <link rel="stylesheet" type="text/css" href="bower/qtip2/jquery.qtip.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="css/ie8.css">
+    <![endif]-->
 	<!-- modernizer -->
 	<script src="bower/modernizer/modernizr.js"></script>
 </head>
@@ -29,7 +32,7 @@
 		<p class="browsehappy">Вы испоьзуете устаревший браузер. Пожалуйста <a href="http://browsehappy.com">обновите</a>его.</p>
 		<![endif]-->
 		<div class="wrapper">
-			<div class="main-content">
+			<div class="main-content main-content-margin">
 				<header class="page-header">
 					<div class="container-big">
 						<a class="header-logo-link" href="#">
@@ -69,7 +72,7 @@
 									</div>
 								</li>
 								<li class="sprite contacts-item mail">
-									<a class="contacts-link" href="mailto:kseniya.solopina@gmail.com">
+									<a class="contacts-link ellipsis fix" href="mailto:kseniya.solopina@gmail.com" title="kseniya.solopina@gmail.com">
 										<span class="contacts-text">kseniya.solopina@gmail.com</span>
 									</a>
 								</li>
@@ -198,6 +201,7 @@
 			</div>
 		</footer>
     <script src="./js/jquery.js"></script>
+    <script src='./js/placeholders.js'></script>
     <script src="bower/qtip2/jquery.qtip.js"></script>
     <script src="bower/bpopup/jquery.bpopup.js"></script>
     <script src="./js/main.js"></script>

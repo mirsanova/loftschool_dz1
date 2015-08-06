@@ -69,4 +69,6 @@ margin-bottom: 40px;
 .btn_res:active{
     box-shadow: 0px -2px #687b8f;
 }
-
+.g-recaptcha {
+    padding-bottom: 15px;
+}

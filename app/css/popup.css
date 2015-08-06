@@ -89,6 +89,7 @@
     background: #fbfcfd;
     display: block;
     cursor: pointer;
+    z-index: 1;
 }
 .upload:after {
     content: '';
@@ -102,9 +103,12 @@
     top: -1px;
     border-radius: 0 4px 4px 0;
     border: 1px solid #48cbe8;
+    z-index:2;
 }
 input[type="file"] {
     opacity: 0;
+    -moz-opacity: 0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=0)"; /*IE8*/
     cursor: pointer;
     z-index: 1;
 }
